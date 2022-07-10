@@ -1,5 +1,8 @@
 
 fn main() {
+
+    // Vector
+
     // Creating a New Vector
     let v1: Vec<i32> = Vec::new();
     let v2 = vec![1, 2, 3];
@@ -59,5 +62,37 @@ fn main() {
         SpreadsheetCell::Float(10.12),
     ];
     println!("{:?}", row);
+
+    // String
+
+    // Creating a New String
+    let mut s1 = String::new();
+    let data = "initial contents";
+    let s2 = data.to_string();
+    let s3 = "initial contents".to_string();
+
+    // Updating a String
+    let mut s4 = String::from("foo");
+    s4.push_str("bar");
+
+    // Concatenation with the + Operator or the format! Macro
+    let s1 = String::from("Hello, ");
+    let s2 = String::from("world!");
+    // note s1 has been moved here and can no longer be used
+    let s3 = s1 + &s2; 
+
+    let s1 = String::from("tic");
+    let s2 = String::from("tac");
+    let s3 = String::from("toe");
+    // format! macro uses references so that this call doesn’t take ownership of any of its parameters.
+    let s = format!("{}-{}-{}", s1, s2, s3); 
+
+    // Methods for Iterating Over Strings
+    for c in "नमस्ते".chars() {
+        println!("{}", c);
+    }
+    for b in "नमस्ते".bytes() {
+        println!("{}", b);
+    }
 
 }
